@@ -1,1 +1,0 @@
-hoeveel = int(input("Hoeveel"))
