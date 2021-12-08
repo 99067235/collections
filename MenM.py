@@ -2,6 +2,7 @@ import random
 zak = []
 zak2 = {}
 hoeveel = 0
+list1 = 0
 
 colors = ["oranje", "blauw", "groen", "bruin"]
 
@@ -16,7 +17,9 @@ def choice():
             zak2[new] = 1
     return zak2
 
-        
+def listToString(list1):
+    return str(list1).replace('[', '').replace(']', '')
+    
 def snapNiet():
     print("Sorry dat snap ik niet...")
     print("")
@@ -28,7 +31,11 @@ def hoeveelstuks():
         if hoeveel >= 0:
             print(toevoegen(hoeveel))
             choice()
-            int(input("Hoeveel M&M's wil je in je zakje? "))
+            kleur = int(input("Hoeveel kleuren moeten er aan de zak toegevoegd worden? "))
+            if kleur >= 0:
+                listToString(list1)
+            else:
+                snapNiet()
         else:
             snapNiet()
             hoeveelstuks()
