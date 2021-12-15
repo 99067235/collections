@@ -3,11 +3,13 @@ zak = []
 zak2 = {}
 soortCheck = 0
 
-colors = ["oranje", "blauw", "groen", "bruin"]
+colors = ['oranje', 'blauw', 'groen', 'bruin']
+
+def sorteren(soortCheck):
+    zak.sort()
+    return zak
 
 
-
-    
 def diction(kleur):
     for i in range(hoeveel):
         new = random.choice(colors)
@@ -24,6 +26,7 @@ def snapNiet():
 
 def hoeveelstuks():
     global hoeveel
+    global soortCheck
     try:
         hoeveel = int(input("Hoeveel M&M's wil je in je zakje? "))
         if hoeveel >= 0:
@@ -32,6 +35,7 @@ def hoeveelstuks():
             if kleur >= 0:
                 print(diction(kleur))
                 sorteren(soortCheck)
+                print(zak)
             else:
                 snapNiet()
         else:
@@ -42,9 +46,11 @@ def hoeveelstuks():
         hoeveelstuks()
 
 def toevoegen(aantal):
+    global zak
     for i in range(aantal):
         new = random.choice(colors)
         zak.append(new)
+        zak.sort()
     return zak
 
 hoeveelstuks()
