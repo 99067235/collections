@@ -5,12 +5,10 @@ soortCheck = 0
 
 colors = ['oranje', 'blauw', 'groen', 'bruin']
 
-def sorteren(soortCheck):
-    zak.sort()
-    return zak
+def sorteren():
+    sort_orders = sorted(zak2.items(), key=lambda x: x[1], reverse=True)
 
-
-def diction(kleur):
+def diction():
     for i in range(hoeveel):
         new = random.choice(colors)
         if new in zak2:
@@ -33,9 +31,8 @@ def hoeveelstuks():
             print(toevoegen(hoeveel))
             kleur = int(input("Hoeveel kleuren moeten er aan de zak toegevoegd worden? "))
             if kleur >= 0:
-                print(diction(kleur))
-                sorteren(soortCheck)
-                print(zak)
+                sorteren()
+                print(diction())
             else:
                 snapNiet()
         else:
